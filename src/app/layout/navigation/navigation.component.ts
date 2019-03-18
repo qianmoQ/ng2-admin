@@ -15,13 +15,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Import Bootstrap
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/animate.css/animate.css";
-// Import Local
-@import "./assets/scss/common/common_variables";
-@import "./assets/scss/common/common_mixins";
-// Import Theme
-@import "./assets/scss/common/common_theme";
+import {Component, OnInit} from '@angular/core';
+import {SharedService} from '../../shared/shared.service';
 
+@Component({
+    selector: 'app-navigation',
+    templateUrl: './navigation.component.html',
+    styleUrls: ['./navigation.component.scss']
+})
+
+export class NavigationComponent implements OnInit {
+
+    sidebarVisible: boolean;
+
+    constructor(private sharedService: SharedService) {
+        sharedService.sidebarVisibilitySubject.subscribe((value) => {
+            this.sidebarVisible = value;
+        });
+    }
+
+    ngOnInit() {
+    }
+
+}

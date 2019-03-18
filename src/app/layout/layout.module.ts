@@ -29,6 +29,7 @@ import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {ButtonsModule} from 'ngx-bootstrap';
 import {HeaderComponent} from './header/header.component';
 import {NavigationTriggerComponent} from './header/navigation-trigger/navigation-trigger.component';
+import {NavigationComponent} from './navigation/navigation.component';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true
@@ -38,6 +39,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     declarations: [
         LayoutComponent,
         HeaderComponent,
+        NavigationComponent,
         NavigationTriggerComponent
     ],
     imports: [

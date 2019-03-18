@@ -15,17 +15,14 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>ng2 Admin</title>
-    <base href="/">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-<app-root></app-root>
-</body>
-</html>
+<!-- menu start -->
+<aside class="sidebar" [class.toggled]="sidebarVisible">
+    <perfect-scrollbar>
+        <ul class="navigation">
+            <li routerLinkActive="navigation__sub--active" class="navigation-sub">
+                <a [routerLink]="['/home']">Home</a>
+            </li>
+        </ul>
+    </perfect-scrollbar>
+</aside>
+<!-- menu stop -->
