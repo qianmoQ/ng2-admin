@@ -6,53 +6,38 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-.header {
-    position: fixed;
-    width: 100%;
-    height: $header-height;
-    box-shadow: $header-shadow;
-    color: $white;
-    padding: 0 2rem;
-    z-index: $header-z-index;
-    display: flex;
-    align-items: center;
-    top: 0;
-    left: 0;
+import {Component, OnInit} from '@angular/core';
+import {SharedService} from '../../../shared/shared.service';
 
-    @include clearfix();
+@Component({
+    selector: 'navigation-trigger',
+    templateUrl: './navigation-trigger.component.html',
+    styleUrls: ['./navigation-trigger.component.scss'],
+})
+export class NavigationTriggerComponent implements OnInit {
 
-    .ma-backdrop {
-        position: absolute;
+    sidebarVisible: boolean;
+
+    constructor(private sharedService: SharedService) {
+        sharedService.sidebarVisibilitySubject.subscribe((value) => {
+            this.sidebarVisible = value;
+        });
     }
 
-}
-
-.header-logo {
-    @include media-breakpoint-up(xl) {
-        min-width: calc(#{$sidebar-width} - 2rem);
+    toggleSidebarVisibility() {
+        this.sharedService.toggleSidebarVisibilty();
     }
 
-    @include media-breakpoint-down(sm) {
-        display: none;
+    ngOnInit() {
     }
 
-    & > h1 {
-        line-height: 100%;
-        font-size: 1.3rem;
-        font-weight: normal;
-        margin: 0;
-
-        & > a {
-            color: $white;
-        }
-    }
 }

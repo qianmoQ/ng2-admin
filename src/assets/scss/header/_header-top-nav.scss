@@ -33,7 +33,7 @@
             position: relative;
             @include transition(background-color 300ms);
 
-            &:not(.header__nav__text) {
+            &:not(.header-nav-text) {
                 padding: 0.5rem 0.15rem;
                 min-width: 50px;
 
@@ -49,14 +49,14 @@
             }
         }
 
-        .dropdown-menu--block {
+        .dropdown-menu-block {
             padding: 0;
         }
 
         @include media-breakpoint-down(xs) {
             position: static;
 
-            .dropdown-menu--block {
+            .dropdown-menu-block {
                 left: 20px !important;
                 width: calc(100% - 40px);
                 top: $header-height - 10 !important;
@@ -65,7 +65,7 @@
     }
 }
 
-.top-nav__notifications {
+.top-nav-notifications {
     .listview {
         position: relative;
 
@@ -90,12 +90,12 @@
         }
     }
 
-    .listview__scroll {
+    .listview-scroll {
         height: 350px;
     }
 }
 
-.top-nav__notifications--cleared {
+.top-nav-notifications-cleared {
     .listview {
         &:before {
             transform: scale(1) rotate(0deg);
@@ -104,7 +104,7 @@
     }
 }
 
-.top-nav__notify {
+.top-nav-notify {
     &:before {
         content: '';
         width: 7px;
