@@ -27,6 +27,7 @@ export class LayoutComponent implements OnInit {
     maTheme: string = this.sharedService.maTheme;
 
     constructor(private sharedService: SharedService) {
+        console.log(1);
         sharedService.maThemeSubject.subscribe((value) => {
             this.maTheme = value;
         });
