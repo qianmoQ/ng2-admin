@@ -15,4 +15,8 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<router-outlet></router-outlet>
+<main class="main" [attr.data-ma-theme]="maTheme">
+    <app-header></app-header>
+    <app-navigation></app-navigation>
+    <router-outlet></router-outlet>
+</main>

@@ -15,28 +15,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
-import {AppComponent} from './app.component';
-import {routing} from './app.routing';
-import {SharedService} from './shared/shared.service';
+import {NgModule} from '@angular/core';
+import {LayoutRouting} from './layout.routing';
+
+import {LayoutComponent} from './layout.component';
+
+import {PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
+
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import {ButtonsModule} from 'ngx-bootstrap';
+
+const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+    suppressScrollX: true
+};
 
 @NgModule({
     declarations: [
-        AppComponent
+        LayoutComponent,
     ],
     imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        routing
-    ],
-    providers: [
-        SharedService
-    ],
-    bootstrap: [AppComponent]
+        CommonModule,
+        LayoutRouting,
+        FormsModule,
+        BsDropdownModule.forRoot(),
+        ButtonsModule.forRoot(),
+        PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
+    ]
 })
 
-export class AppModule {
+export class LayoutModule {
 }
