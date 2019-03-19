@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 import {Component, OnInit} from '@angular/core';
+import {SharedService} from '../../shared/shared.service';
 
 @Component({
     selector: 'app-header',
@@ -26,11 +27,20 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-    constructor() {
+    // theme
+    themeModel: string = 'green';
+
+    constructor(private sharedService: SharedService) {
+        sharedService.maThemeSubject.subscribe((value) => {
+            this.themeModel = value;
+        });
     }
 
     ngOnInit() {
-        console.log(11111);
+    }
+
+    setTheme() {
+        this.sharedService.setTheme(this.themeModel);
     }
 
 }

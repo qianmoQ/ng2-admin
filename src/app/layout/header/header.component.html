@@ -22,4 +22,17 @@
             <a [routerLink]="['/']">Ng2 Admin</a>
         </h1>
     </div>
+    <ul class="top-nav">
+        <li dropdown class="d-none d-sm-inline-block">
+            <a dropdownToggle="">
+                <i class="zmdi zmdi-more-vert"></i>
+            </a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-menu-icon" role="menu">
+                <div class="dropdown-item theme-switch">
+                    <div class="btn-group btn-group-colors mt-2 d-block">
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
 </header>

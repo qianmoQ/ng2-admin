@@ -53,7 +53,7 @@
     }
 }
 
-.sidebar--hidden {
+.sidebar-hidden {
     @include sidebar-toggled();
 }
 

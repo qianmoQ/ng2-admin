@@ -6,30 +6,46 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- *
+ * 
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@import "./assets/scss/_inner-imports";
-// Import Bootstrap
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/animate.css/animate.css";
-// Import icon
-@import "../node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.css";
-// Import Local
-@import "./assets/scss/common/common_variables";
-@import "./assets/scss/common/common_mixins";
-// Import Theme
-@import "./assets/scss/common/common_theme";
-@import "./assets/scss/base";
-// Import Button
-@import "./assets/scss/button/button";
-// Import Dropdown
-@import "./assets/scss/dropdown/dropdown";
+[dropdown] {
+    position: relative;
+}
 
+.dropdown-item {
+    cursor: pointer;
+    position: relative;
+    @include transition(background-color 300ms, color 300ms);
+}
+
+.dropdown-menu {
+    @include animate(fadeIn, 300ms);
+    box-shadow: $dropdown-box-shadow;
+    min-width: 0rem;
+}
+
+.dropdown-menu-block {
+    width: 320px;
+
+    @include media-breakpoint-down(xs) {
+        width: 100%;
+    }
+}
+
+.dropdown-menu-icon {
+    .dropdown-item {
+        & > i {
+            line-height: 100%;
+            vertical-align: top;
+            font-size: 1.4rem;
+            width: 2rem;
+        }
+    }
+}
